@@ -55,6 +55,11 @@ const BlogForm = () => {
     setArticles(updatedArticles);
   };
 
+  useEffect(() => {
+    if (formData.isPublished) {
+      alert("L'articolo sarà pubblicato!");
+    }
+  }, [formData.isPublished]);
 
   return (
     <div className="container">
