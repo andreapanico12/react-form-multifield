@@ -12,6 +12,31 @@ const BlogForm = () => {
     isPublished: false,
   };
 
+  const categories = [
+    "Starters",
+    "Main Courses",
+    "Side Dishes",
+    "Desserts"
+  ]
+
+  const categoriesTags = [
+    "Starters",
+    "Main",
+    "Side",
+    "Desserts",
+    "Beef",
+    "Chicken",
+    "Pork",
+    "Pasta",
+    "Vegetarian",
+    "Vegan",
+    "Gluten Free",
+    "Cake",
+    "Roast",
+    "Breakfast",
+    "Brunch"
+  ]
+
   const [formData, setFormData] = useState(formDataDefault);
   const [articles, setArticles] = useState([]);
 
@@ -101,123 +126,28 @@ const BlogForm = () => {
         />
         <select name="category" value={formData.category} onChange={handlerChange}>
           <option value="">Select Category</option>
-          <option value="Starters">Starters</option>
-          <option value="Main Courses">Main Courses</option>
-          <option value="Side Dishes">Side Dishes</option>
-          <option value="Desserts">Desserts</option>
+          {categories.map((category,index) =>  (
+            <option key={index} value={category}>{category}</option>
+          ))}
+          
+
         </select>
 
         <div className="tags-container">
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Starter"
-              checked={formData.tags.includes("Starter")}
-              onChange={handlerChange}
-            />
-            Starter
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Main"
-              checked={formData.tags.includes("Main")}
-              onChange={handlerChange}
-            />
-            Main
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Side"
-              checked={formData.tags.includes("Side")}
-              onChange={handlerChange}
-            />
-            Side
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Dessert"
-              checked={formData.tags.includes("Dessert")}
-              onChange={handlerChange}
-            />
-            Dessert
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Vegetarian"
-              checked={formData.tags.includes("Vegetarian")}
-              onChange={handlerChange}
-            />
-            Vegetarian
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Vegan"
-              checked={formData.tags.includes("Vegan")}
-              onChange={handlerChange}
-            />
-            Vegan
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Cake"
-              checked={formData.tags.includes("Cake")}
-              onChange={handlerChange}
-            />
-            Cake
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Beef"
-              checked={formData.tags.includes("Beef")}
-              onChange={handlerChange}
-            />
-            Beef
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Chicken"
-              checked={formData.tags.includes("Chicken")}
-              onChange={handlerChange}
-            />
-            Chicken
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Pork"
-              checked={formData.tags.includes("Pork")}
-              onChange={handlerChange}
-            />
-            Pork
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="tags"
-              value="Pasta"
-              checked={formData.tags.includes("Pasta")}
-              onChange={handlerChange}
-            />
-            Pasta
-          </label>
+          {categoriesTags.map((categoryTag,index) => (
+             <label>
+              <input
+                key={index}
+                type="checkbox"
+                name="tags"
+                value={categoryTag}
+                checked={formData.tags.includes(categoryTag)}
+                onChange={handlerChange}
+              />
+              {categoryTag}
+            </label>
+
+          ))}
         </div>
 
        
