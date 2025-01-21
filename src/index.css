@@ -1,9 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: #eafbf0;
@@ -15,9 +15,8 @@ body {
   min-height: 100vh;
 }
 
-
 .container {
-  width: 50%;
+  width: 1200px;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -25,14 +24,15 @@ body {
   text-align: center;
 }
 
-
 h1 {
   font-size: 24px;
   color: #2c6e49;
   margin-bottom: 10px;
 }
 
-input {
+input,
+select,
+textarea {
   width: calc(100% - 20px);
   padding: 10px;
   margin: 10px 0;
@@ -41,16 +41,26 @@ input {
   font-size: 16px;
 }
 
-
-input:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #2c6e49;
   box-shadow: 0 0 5px #b6e2d3;
 }
 
+textarea {
+  height: 100px;
+  resize: none; 
+}
+
+select {
+  appearance: none;
+  background-color: white;
+}
 
 button {
-  background-color: #2c6e49; 
+  background-color: #2c6e49;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -61,9 +71,29 @@ button {
 }
 
 button:hover {
-  background-color: #22543d; 
+  background-color: #22543d;
 }
 
+.tags-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.tags-container label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
 
 ul {
   list-style: none;
@@ -88,6 +118,13 @@ li p {
   color: #2c6e49;
 }
 
+
+li img {
+  max-width: 80px;
+  max-height: 80px; 
+  margin-top: 5px;
+  border-radius: 5px;
+}
 
 li button {
   background-color: #e74c3c;
