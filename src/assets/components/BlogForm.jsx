@@ -127,7 +127,7 @@ const BlogForm = () => {
         <select name="category" value={formData.category} onChange={handlerChange}>
           <option value="">Select Category</option>
           {categories.map((category,index) =>  (
-            <option key={index} value={category}>{category}</option>
+            <option key={`categories-${index}`} value={category}>{category}</option>
           ))}
           
 
@@ -137,7 +137,7 @@ const BlogForm = () => {
           {categoriesTags.map((categoryTag,index) => (
              <label>
               <input
-                key={index}
+                key={`tags-${index}`}
                 type="checkbox"
                 name="tags"
                 value={categoryTag}
